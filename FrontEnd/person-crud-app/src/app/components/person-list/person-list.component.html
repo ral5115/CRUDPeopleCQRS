@@ -1,14 +1,18 @@
 <!-- src/app/components/person-list/person-list.component.html -->
-<div class="container">
-  <h1>Lista de Personas</h1>
-  <button (click)="goToCreatePerson()">Crear Nueva Persona</button>
-  <table>
-    <thead>
+<div class="container mt-4">
+  <h1 class="mb-4">Lista de Personas</h1>
+  <button class="btn btn-primary mb-3" (click)="goToCreatePerson()">Crear Nueva Persona</button>
+  <table class="table table-striped">
+    <thead class="thead-dark">
       <tr>
         <th>ID</th>
         <th>Nombre</th>
         <th>Email</th>
-        <!-- Agrega más columnas según las propiedades de tu modelo Person -->
+        <th>Apellido</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Numero Celular</th>
+        <th>Direccion</th>
+
       </tr>
     </thead>
     <tbody>
@@ -16,7 +20,10 @@
         <td>{{ person.id }}</td>
         <td>{{ person.firstName }}</td>
         <td>{{ person.email }}</td>
-        <!-- Agrega más celdas según las propiedades de tu modelo Person -->
+        <td>{{ person.lastName }}</td>
+        <td>{{ person.dateOfBirth }}</td>
+        <td>{{ person.phoneNumber }}</td>
+        <td>{{ person.address }}</td>
       </tr>
     </tbody>
   </table>
