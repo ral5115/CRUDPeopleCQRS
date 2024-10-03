@@ -1,0 +1,16 @@
+<!-- src/app/components/person-form/person-form.component.html -->
+<div class="container">
+  <h1>Crear Persona</h1>
+  <form (ngSubmit)="savePerson()">
+    <div>
+      <label for="firstName">Nombre:</label>
+      <input type="text" id="firstName" [(ngModel)]="person.firstName" name="firstName" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="person.email" name="email" required>
+    </div>
+    <!-- Agrega más campos según las propiedades de tu modelo Person -->
+    <button type="submit">Guardar</button>
+  </form>
+</div>
