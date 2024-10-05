@@ -8,7 +8,7 @@ import { Person } from '../models/person.model';
   providedIn: 'root'
 })
 export class PersonService {
-  private apiUrl = 'https://api.example.com/persons'; // Reemplaza con la URL de tu API
+  private apiUrl = 'http://localhost:27062/api/People'; // Reemplaza con la URL de tu API
 
   constructor(private http: HttpClient) {}
 

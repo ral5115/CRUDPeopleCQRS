@@ -27,4 +27,14 @@ export class PersonListComponent implements OnInit {
   goToCreatePerson(): void {
     this.router.navigate(['/person-form']);
   }
+
+  deletePerson(id: number): void {
+    this.personService.deletePerson(id).subscribe(() => {
+      this.loadPersons(); // Recarga la lista después de eliminar
+    });
+  }
+
+  goToEditPerson(id: number): void {
+    this.router.navigate(['/person-form', id]);
+  }
 }
