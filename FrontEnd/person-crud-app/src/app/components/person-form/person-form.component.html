@@ -1,6 +1,7 @@
 
 <div class="container mt-4">
-  <h1 class="mb-4">Crear Persona</h1>
+  <h1 *ngIf="isEditMode" class="mb-4">Editar Persona</h1>
+  <h1 *ngIf="!isEditMode" class="mb-4">Crear Persona</h1>
   <form (ngSubmit)="savePerson()" class="needs-validation" novalidate>
 
     <div class="form-group">
@@ -39,6 +40,6 @@
       <div class="invalid-feedback">Por favor, ingresa una direccion válida.</div>
     </div>
 
-    <button type="submit" class="btn btn-success">Guardar</button>
+    <button type="submit" class="btn btn-success">{{ isEditMode ? 'Actualizar' : 'Guardar' }}</button>
   </form>
 </div>
