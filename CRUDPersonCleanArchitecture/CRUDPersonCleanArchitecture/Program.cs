@@ -21,7 +21,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-        new MySqlServerVersion(new Version(8, 0, 27))));
+        new MySqlServerVersion(new Version(8, 0, 27)),
+        mySqlOptions => mySqlOptions.EnableRetryOnFailure()
+        ));
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
@@ -46,7 +48,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
     
-app.UseAuthorization();
+//app.UseAuthorization();
 
 app.MapControllers();
 

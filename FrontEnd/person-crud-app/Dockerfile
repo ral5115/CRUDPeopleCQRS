@@ -12,16 +12,16 @@ RUN npm install
 COPY . .
 
 # Compilar la aplicación Angular
-RUN npm run build --prod
+RUN npm run build 
 
 # Etapa 2: Configuración del servidor NGINX
 FROM nginx:alpine
 
 # Copiar los archivos compilados de la aplicación desde la etapa de construcción
-COPY --from=build /app/dist/person-crud-app /usr/share/nginx/html
+COPY --from=build /app/dist/person-crud-app/browser /usr/share/nginx/html
 
 # Exponer el puerto 80 para acceder a la aplicación
-EXPOSE 80
+EXPOSE 4201
 
 # Iniciar NGINX
 CMD ["nginx", "-g", "daemon off;"]
