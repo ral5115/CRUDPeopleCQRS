@@ -1,0 +1,24 @@
+use PersonCatalogDB;
+
+CREATE TABLE `People` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `FirstName` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `LastName` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Email` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `DateOfBirth` datetime(6) NOT NULL,
+  `PhoneNumber` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Address` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `PersonCatalogDB`.`People`
+(`Id`,
+`FirstName`,
+`LastName`,
+`Email`,
+`DateOfBirth`,
+`PhoneNumber`,
+`Address`)
+VALUES
+('5', 'Mateo', 'Lopez Patiño', 'reynel.lopez@globant.com', '2009-12-12 00:00:00.000000', '68495161651', 'Cra 22 # 43 - 86'
+);
