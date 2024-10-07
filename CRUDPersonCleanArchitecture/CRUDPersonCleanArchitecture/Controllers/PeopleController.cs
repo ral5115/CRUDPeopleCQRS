@@ -16,9 +16,7 @@ namespace CRUDPersonCleanArchitecture.Controllers
             _mediator = mediator;
         }
 
-        /// <summary>
-        /// Obtiene todas las personas en el catálogo.
-        /// </summary>
+        // GET: api/Person
         [HttpGet]
         public async Task<IActionResult> GetAllPeople()
         {
@@ -36,10 +34,7 @@ namespace CRUDPersonCleanArchitecture.Controllers
         }
 
 
-        /// <summary>
-        /// Crea una nueva persona en el catálogo.
-        /// </summary>
-        /// <param name="command">Los detalles de la persona a crear.</param>
+        // POST: api/Person
         [HttpPost]
         public async Task<IActionResult> CreatePeople(CreatePersonCommand command)
         {
